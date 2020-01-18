@@ -1,4 +1,9 @@
 .App {
-  text-align: center;
+  text-align: left;
   background-color: white;
+}
+
+.main   {
+    padding: 50px 200px;
+
 }
