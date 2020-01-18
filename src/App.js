@@ -2,24 +2,46 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FadeText from './components/FadeText.js';
 
-import Button from 'react-bootstrap/Button'
+import SplashPage from './components/SplashPage.js';
+import Body from './onboarding/Body.js';
 
-function App() {
-  return (
-    <div className="main">
-        <h1>Time Block<br />Your Life</h1>
-        <br></br>
-        <FadeText
-            title="What Is Time Blocking?"
-            content="
-            Why put tasks in a to-do list and forget to do them, when you can schedule them automatically in your calendar?
-            "
-            image="peopleworking.png"
-        />
-    </div>
-  );
+class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+                currentStep: 1
+        }
+    }
+
+    _next = () => {
+        let cstep = this.state.currentStep + 1
+
+        this.setState({
+            currentStep: cstep
+        }, () => {console.log(this.state.currStep)} )
+    }
+
+    render()    {
+        return (
+            <React.Fragment>
+                <SplashPage
+                    next={this._next}
+                    currStep={this.state.currentStep}
+                    title="What Is Time Blocking?"
+                    content=
+                        "
+                        Why put tasks in a to-do list and forget to do them, when you can schedule them automatically in your calendar?
+                        "
+                    image="peopleworking.png"
+                />
+                <Body
+                    currStep={this.state.currentStep}
+                />
+            </React.Fragment>
+        );
+    }
+
 }
 
 export default App;
