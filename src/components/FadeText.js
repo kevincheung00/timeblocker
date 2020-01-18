@@ -10,11 +10,13 @@ class FadeText extends React.Component {
         </Fade>
 
         <Fade up>
-          <p>{this.props.content}</p>
+            <div>
+                <p>{this.props.content}</p>
+            </div>
         </Fade>
 
         <Fade right>
-            <img src={"../public/images/" + this.props.image} />
+            <img src={"/images/" + this.props.image} />
         </Fade>
       </div>
     );
