@@ -7,3 +7,15 @@
     padding: 50px 200px;
 
 }
+
+#header-image   {
+    width: 70%;
+    float: right;
+    z-index: 1;
+}
+
+#opening-text   {
+    color: black;
+    font-size: 18px;
+    width: 500px;
+}
