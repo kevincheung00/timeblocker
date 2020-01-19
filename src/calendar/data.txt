@@ -1,0 +1,7 @@
+CS2214B|"Assignment 2 - Python"|Assignment|2020-01-21T11:59:00-05:00|20|
+CS2212B|"Assignment 3"|Assignment|2020-01-22T11:59:00-05:00|15|
+WRITING2111G|"Illiad Essay"|Assignment|2020-01-24T11:59:00-05:00|10|
+BUS2257|"Feasibility Study"|Exam|2020-01-26T11:59:00-05:00|15|
+CS2214B|"Midterm"|Exam|2020-02-01T11:59:00-05:00|20|
+CS2212B|"Midterm"|Exam|2020-02-05T11:59:00-05:00|20|
+CS2212B|"Assignment 4"|Assignment|2020-02-10T11:59:00-05:00|15|
