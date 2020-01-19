@@ -2,7 +2,6 @@ import React, { useState, Fragment } from 'react';
 
 import Fade from 'react-reveal/Fade';
 import Button from 'react-bootstrap/Button';
-import Badge from 'react-bootstrap/Badge';
 
 class SplashPage extends React.Component {
     render() {

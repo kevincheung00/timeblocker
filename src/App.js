@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import SplashPage from "./components/SplashPage.js";
 import Body from "./onboarding/Body.js";
+import MainApp from "./application/MainApp.js";
 
 class App extends React.Component {
   constructor(props) {
