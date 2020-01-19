@@ -1,44 +1,51 @@
 .App {
-    text-align: left;
-    background-color: white;
+  text-align: left;
+  background-color: white;
 }
 
-.main   {
-    padding: 50px 200px;
+.main {
+  padding: 50px 200px;
 }
 
-#header-image   {
-    width: 60%;
-    float: right;
-    z-index: 1;
-    max-width: 1000px;
+#header-image {
+  width: 60%;
+  float: right;
+  z-index: 1;
+  max-width: 1000px;
 }
 
-#opening-text   {
-    color: black;
-    font-size: 18px;
-    width: 500px;
+#opening-text {
+  color: black;
+  font-size: 18px;
+  width: 500px;
 }
 
-.credits    {
-    padding-top: 30%;
+.credits {
+  padding-top: 20%;
 }
 
-.form-item  {
-    width: 50%;
-    max-width: 750px;
+.form-item {
+  width: 60%;
+  max-width: 800px;
 
-    margin: auto;
-    padding: 100px;
+  margin: auto;
+  padding: 50px 100px 50px 100px;
 
-    background-color: RGBA(0, 0, 0, 0.05);
-    border-radius: 20px;
+  background-color: RGBA(0, 0, 0, 0.05);
+  border-radius: 20px;
 }
 
-.item-padding   {
-    margin: 50px 0px;
+.item-padding {
+  margin: 50px 0px;
 }
 
-.form-nav   {
-    margin-right: 10px;
+.form-nav {
+  margin-right: 10px;
+}
+
+.logo-header {
+  background-image: url('./onboarding/nicegradient.jpg');
+  text-align: center;
+  margin-bottom: 20px;
+  background-size: cover;
 }

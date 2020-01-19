@@ -23,11 +23,15 @@ class SplashPage extends React.Component {
 
                     <Fade up cascade>
                         <div id="opening-text">
-                            <p>{this.props.content}</p>
+                            <p>Why put tasks in a to-do list and forget to do them, when you can schedule them automatically in your calendar?
+                            </p><p>With Time Blocker, your calendar will automatically block off time in advance for you to study and work on your school assignments and exams.
+
+
+                            </p>
                         </div>
                     </Fade>
 
-                    <Fade up cascade>
+                    <Fade up>
                         <Button variant="outline-primary" onClick={this.props.next}>Get Started!</Button>
                     </Fade>
                 </div>

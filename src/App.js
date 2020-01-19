@@ -11,7 +11,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStep: 1
+      currentStep: 1,
+      firstName: "Justin",
+      lastName: "Zhang",
+      email: "uofthacks@uofthacks.com",
+      password: "qwertyuiop",
+      startTime: 8,
+      endTime: 18,
+      examDays: 14,
+      assignmentDays: 7
     };
   }
 
@@ -29,6 +37,19 @@ class App extends React.Component {
     );
   };
 
+  _startApp = (_firstName, _lastName, _Email, _startTime, _endTime, _assignmentDays, _examDays) => {
+    this._next();
+    this.setState({
+      firstName: _firstName,
+      lastName: _lastName,
+      email: _Email,
+      startTime: _startTime,
+      endTime: _endTime,
+      assignmentDays: _assignmentDays,
+      examDays: _examDays
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -37,15 +58,24 @@ class App extends React.Component {
             next={this._next}
             currStep={this.state.currentStep}
             title="What Is Time Blocking?"
-            content="
-                        Why put tasks in a to-do list and forget to do them, when you can schedule them automatically in your calendar?
-                        "
             image="peopleworking.png"
           />
         </AnimatePresence>
 
         <AnimatePresence>
-          <Body next={this._next} currStep={this.state.currentStep} />
+          <Body
+            next={this._next}
+            start={this._startApp}
+            currStep={this.state.currentStep}
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            email={this.state.email}
+            password={this.state.password}
+            startTime={this.state.startTime}
+            endTime={this.state.endTime}
+            examDays={this.state.examDays}
+            assignmentDays={this.state.assignmentDays}
+          />
         </AnimatePresence>
       </React.Fragment>
     );

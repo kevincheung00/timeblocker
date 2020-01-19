@@ -12,82 +12,108 @@ import Row from "react-bootstrap/Row";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Body = props => {
-  const [inputFields, setInputFields] = useState([
-    {
-      firstName: "Justin",
-      lastName: "Zhang",
-      email: "uofthacks@uofthacks.com",
-      password: "qwertyuiop",
-      startTime: 8,
-      endTime: 18
-    }
-  ]);
-
+const Body = (props) =>  {
   const updateState = () => {
+    props.start(this._firstName, this._lastName, this._Email, this._startTime, this._endTime, this._assignmentDays, this._examDays)
+  }
+    if (props.currStep != 2) return null;
+    return (
+      <React.Fragment>
+        <div class="main">
+          <div class="form-item logo-header">
+            <h1>
+              <b>
+                Time Block <br />
+                Your Life
+              </b>
+            </h1>
+          </div>
 
-  };
+          <div class="form-item">
+            <h1>Sign Up</h1>
+            <p>
+              <i>All settings can be changed later</i>
+            </p>
 
-  if (props.currStep != 2) return null;
-  return (
-    <React.Fragment>
-      <div class="main">
-        <div class="form-item">
-          <h1>Sign Up</h1>
-          <p>
-            <i>All settings can be changed later</i>
-          </p>
-          <Form onSubmit={() => updateState()}>
-            <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" value={inputFields.firstName} />
-              </Form.Group>
+            <Form onSubmit={() => this.updateState()}>
+              <Fade>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridFirstName">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control type="text" placeholder={props.firstName} inputRef={(ref) => { this._firstName = ref }}/>
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formGridLastName">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control type="text" value={props.lastName} inputRef={(ref) => { this._lastName = ref }}/>
+                  </Form.Group>
+                </Form.Row>
+              </Fade>
 
-              <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" placeholder="Password" />
-              </Form.Group>
-            </Form.Row>
+              <Fade>
+                <Form.Group controlId="formGridEmail">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" value={props.email} inputRef={(ref) => { this._Email = ref }}/>
+                </Form.Group>
+              </Fade>
 
-            <Form.Group controlId="formGridAddress1">
-              <Form.Label>Address</Form.Label>
-              <Form.Control placeholder="1234 Main St" />
-            </Form.Group>
+              <Fade>
+                <Form.Group controlId="formGridPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" value={props.password} inputRef={(ref) => { this._Password = ref }}/>
+                </Form.Group>
+              </Fade>
 
-            <Form.Group controlId="formGridAddress2">
-              <Form.Label>Address 2</Form.Label>
-              <Form.Control placeholder="Apartment, studio, or floor" />
-            </Form.Group>
+              <Fade>
+                <p>
+                  <br />
+                  Tell us when you want us to schedule your tasks! (24 hour
+                  time)
+                </p>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridStartTime">
+                    <Form.Label>Start Time</Form.Label>
+                      <Form.Label>For Assignments?</Form.Label>
+                      <Form.Control type="number" step="1" value={props.startTime} inputRef={(ref) => { this._startTime = ref }}/>
+                  </Form.Group>
 
-            <Form.Row>
-              <Form.Group as={Col} controlId="formGridCity">
-                <Form.Label>City</Form.Label>
-                <Form.Control />
-              </Form.Group>
+                  <Form.Group as={Col} controlId="formGridEndTime">
+                    <Form.Label>Ending Time</Form.Label>
+                      <Form.Label>For Assignments?</Form.Label>
+                      <Form.Control type="number" step="1" value={props.endTime} inputRef={(ref) => { this._endTime = ref }}/>
+                  </Form.Group>
+                </Form.Row>
+              </Fade>
 
-              <Form.Group as={Col} controlId="formGridState">
-                <Form.Label>State</Form.Label>
-                <Form.Control as="select">
-                  <option>Choose...</option>
-                  <option>...</option>
-                </Form.Control>
-              </Form.Group>
+              <Fade>
+                <p>
+                  <br />
+                  How many <b>days</b> in advance do you want to start tasks?
+                  <br />
+                  <i>This can be adjusted on a case-by-case basis</i>
+                </p>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="advanceAssignments">
+                    <Form.Label>For Assignments?</Form.Label>
+                    <Form.Control type="number" step="1" value={props.assignmentDays} inputRef={(ref) => { this._assignmentDays = ref }}/>
+                  </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridZip">
-                <Form.Label>Zip</Form.Label>
-                <Form.Control />
-              </Form.Group>
-            </Form.Row>
+                  <Form.Group as={Col} controlId="formGridExamTime">
+                    <Form.Label>For Exams?</Form.Label>
+                    <Form.Control type="number" step="1" value={props.examDays} inputRef={(ref) => { this._examDays = ref }}/>
+                  </Form.Group>
+                </Form.Row>
+              </Fade>
 
-            <Button variant="primary" type="submit">
-              Next
-            </Button>
-          </Form>
+              <Fade up>
+                <Button variant="success" type="submit" size="lg">
+                  Start Blocking!
+                </Button>
+              </Fade>
+            </Form>
+          </div>
         </div>
-      </div>
-    </React.Fragment>
-  );
-};
+      </React.Fragment>
+    );
+}
 
 export default Body;
