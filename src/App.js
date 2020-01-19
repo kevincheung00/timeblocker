@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { motion, AnimatePresence } from "framer-motion"
 
 import SplashPage from './components/SplashPage.js';
 import Body from './onboarding/Body.js';
@@ -14,6 +15,7 @@ class App extends React.Component {
         }
     }
 
+    //Gets the app to the next screen
     _next = () => {
         let cstep = this.state.currentStep + 1
 
@@ -25,6 +27,7 @@ class App extends React.Component {
     render()    {
         return (
             <React.Fragment>
+                <AnimatePresence>
                 <SplashPage
                     next={this._next}
                     currStep={this.state.currentStep}
@@ -35,9 +38,13 @@ class App extends React.Component {
                         "
                     image="peopleworking.png"
                 />
+                </AnimatePresence>
+
+                <AnimatePresence>
                 <Body
                     currStep={this.state.currentStep}
                 />
+                </AnimatePresence>
             </React.Fragment>
         );
     }

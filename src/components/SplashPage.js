@@ -9,7 +9,7 @@ class SplashPage extends React.Component {
             return null
         return (
             <div class="main">
-                <h1><b>Time Block <Badge pill variant="secondary">beta</Badge> <br/>Your Life</b> <br/><br/></h1>
+                <h1><b>Time Block Your Life</b> <Badge pill variant="secondary">beta</Badge> <br/><br/></h1>
 
                 <div class="intro">
                     <Fade right cascade>
@@ -36,7 +36,7 @@ class SplashPage extends React.Component {
                 </div>
             </div>
         );
-  }
-}
+      }
+    }
 
 export default SplashPage;

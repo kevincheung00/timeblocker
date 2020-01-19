@@ -1,11 +1,10 @@
 .App {
-  text-align: left;
-  background-color: white;
+    text-align: left;
+    background-color: white;
 }
 
 .main   {
     padding: 50px 200px;
-
 }
 
 #header-image   {
@@ -23,4 +22,19 @@
 
 .credits    {
     padding-top: 30%;
+}
+
+.form-item  {
+    width: 50%;
+    max-width: 750px;
+
+    margin: auto;
+    padding: 100px;
+
+    background-color: RGBA(0, 0, 0, 0.05);
+    border-radius: 20px;
+}
+
+.item-padding   {
+    margin: 50px 0px;
 }
