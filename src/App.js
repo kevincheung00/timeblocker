@@ -20,10 +20,25 @@ class App extends React.Component {
       startTime: 8,
       endTime: 18,
       examDays: 14,
-      assignmentDays: 7
+      assignmentDays: 7,
+
+      name: "",
+      greeting: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange(event) {
+    this.setState({ name: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    fetch(`/api/greeting?name=${encodeURIComponent(this.state.name)}`)
+      .then(response => response.json())
+      .then(state => this.setState(state));
+  }
   //Gets the app to the next screen
   _next = () => {
     let cstep = this.state.currentStep + 1;
@@ -38,46 +53,41 @@ class App extends React.Component {
     );
   };
 
-  _startApp = (_firstName, _lastName, _Email, _startTime, _endTime, _assignmentDays, _examDays) => {
-    this._next();
+  _startApp = (_firstName) => {
+    this._next()
     this.setState({
       firstName: _firstName,
-      lastName: _lastName,
-      email: _Email,
-      startTime: _startTime,
-      endTime: _endTime,
-      assignmentDays: _assignmentDays,
-      examDays: _examDays
     });
-  }
+  };
 
   render() {
     return (
       <React.Fragment>
-        <AnimatePresence>
-          <SplashPage
-            next={this._next}
-            currStep={this.state.currentStep}
-            title="What Is Time Blocking?"
-            image="peopleworking.png"
-          />
-        </AnimatePresence>
+        <SplashPage
+          next={this._next}
+          currStep={this.state.currentStep}
+          title="What Is Time Blocking?"
+          image="peopleworking.png"
+        />
 
-        <AnimatePresence>
-          <Body
-            next={this._next}
-            start={this._startApp}
-            currStep={this.state.currentStep}
-            firstName={this.state.firstName}
-            lastName={this.state.lastName}
-            email={this.state.email}
-            password={this.state.password}
-            startTime={this.state.startTime}
-            endTime={this.state.endTime}
-            examDays={this.state.examDays}
-            assignmentDays={this.state.assignmentDays}
-          />
-        </AnimatePresence>
+        <Body
+          next={this._next}
+          start={this._startApp}
+          currStep={this.state.currentStep}
+          firstName={this.state.firstName}
+          lastName={this.state.lastName}
+          email={this.state.email}
+          password={this.state.password}
+          startTime={this.state.startTime}
+          endTime={this.state.endTime}
+          examDays={this.state.examDays}
+          assignmentDays={this.state.assignmentDays}
+        />
+
+        <MainApp
+          currStep={this.state.currentStep}
+          name={this.state.firstName}
+        />
       </React.Fragment>
     );
   }
