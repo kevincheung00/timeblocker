@@ -159,53 +159,81 @@ def addEvents():
     # Day TWO
 
     task5 = {
-          'summary': 'Work on: 2214B: Assignment 2 - Python',
-          'start': {'dateTime': '2020-01-20T13:30:00-05:00'},
-          'end': {'dateTime': '2020-01-20T14:30:00-05:00'}
+          'summary': 'Work on: BUS2257: Feasibility Study',
+          'start': {'dateTime': '2020-01-21T12:00:00-05:00'},
+          'end': {'dateTime': '2020-01-21T14:30:00-05:00'}
     }
 
 
     task6 = {
-          'summary': 'Work on: 2214B: Assignment 2 - Python',
-          'start': {'dateTime': '2020-01-20T13:30:00-05:00'},
-          'end': {'dateTime': '2020-01-20T14:30:00-05:00'}
+          'summary': 'Work on: CS2214B: Assignment 2 - Python',
+          'start': {'dateTime': '2020-01-21T16:30:00-05:00'},
+          'end': {'dateTime': '2020-01-21T18:00:00-05:00'}
     }
 
+    # Day THREE
 
     task7 = {
-          'summary': 'Work on: 2214B: Assignment 2 - Python',
-          'start': {'dateTime': '2020-01-20T13:30:00-05:00'},
-          'end': {'dateTime': '2020-01-20T14:30:00-05:00'}
+          'summary': 'Work on: CS2212B: Assignment 3',
+          'start': {'dateTime': '2020-01-22T9:00:00-05:00'},
+          'end': {'dateTime': '2020-01-22T10:30:00-05:00'}
     }
 
 
     task8 = {
           'summary': 'Work on: 2214B: Assignment 2 - Python',
-          'start': {'dateTime': '2020-01-20T13:30:00-05:00'},
-          'end': {'dateTime': '2020-01-20T14:30:00-05:00'}
+          'start': {'dateTime': '2020-01-22T13:30:00-05:00'},
+          'end': {'dateTime': '2020-01-22T14:30:00-05:00'}
     }
 
 
     task9 = {
-          'summary': 'Work on: 2214B: Assignment 2 - Python',
-          'start': {'dateTime': '2020-01-20T13:30:00-05:00'},
-          'end': {'dateTime': '2020-01-20T14:30:00-05:00'}
+          'summary': 'Work on: WRITING2111G: "Illiad Essay"',
+          'start': {'dateTime': '2020-01-22T16:00:00-05:00'},
+          'end': {'dateTime': '2020-01-22T18:30:00-05:00'}
     }
 
     task10 = {
-          'summary': 'Work on: 2214B: Assignment 2 - Python',
-          'start': {'dateTime': '2020-01-20T13:30:00-05:00'},
-          'end': {'dateTime': '2020-01-20T14:30:00-05:00'}
+          'summary': 'Work on: CS2214B: Assignment 2 - Python',
+          'start': {'dateTime': '2020-01-22T18:30:00-05:00'},
+          'end': {'dateTime': '2020-01-22T21:00:00-05:00'}
+    }
+
+    # Day FOUR
+
+    task11 = {
+          'summary': 'PREPARE FOR INTERVIEW',
+          'start': {'dateTime': '2020-01-23T9:00:00-05:00'},
+          'end': {'dateTime': '2020-01-23T9:45:00-05:00'}
+    }
+
+
+    task12 = {
+          'summary': 'Study for: CS2212B Midterm ',
+          'start': {'dateTime': '2020-01-23T13:30:00-05:00'},
+          'end': {'dateTime': '2020-01-23T16:30:00-05:00'}
+    }
+
+    task13 = {
+          'summary': 'Work on: WRITING2111G: Illiad Essay',
+          'start': {'dateTime': '2020-01-23T16:30:00-05:00'},
+          'end': {'dateTime': '2020-01-23T18:00:00-05:00'}
     }
 
     event = service.events().insert(calendarId='primary', body=task1).execute()
     event = service.events().insert(calendarId='primary', body=task2).execute()
     event = service.events().insert(calendarId='primary', body=task3).execute()
     event = service.events().insert(calendarId='primary', body=task4).execute()
-    # event = service.events().insert(calendarId='primary', body=task1).execute()
-    # event = service.events().insert(calendarId='primary', body=task1).execute()
+    event = service.events().insert(calendarId='primary', body=task5).execute()
+    event = service.events().insert(calendarId='primary', body=task6).execute()
+    event = service.events().insert(calendarId='primary', body=task7).execute()
+    event = service.events().insert(calendarId='primary', body=task8).execute()
+    event = service.events().insert(calendarId='primary', body=task9).execute()
+    event = service.events().insert(calendarId='primary', body=task10).execute()
+    event = service.events().insert(calendarId='primary', body=task11).execute()
+    event = service.events().insert(calendarId='primary', body=task12).execute()
+    event = service.events().insert(calendarId='primary', body=task13).execute()
 
-    # print("Event created")
 
 # if __name__ == '__main__':
 #     main()
