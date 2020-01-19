@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, Fragment } from 'react';
+
 import Fade from 'react-reveal/Fade';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
@@ -9,10 +10,10 @@ class SplashPage extends React.Component {
             return null
         return (
             <div class="main">
-                <h1><b>Time Block Your Life</b> <Badge pill variant="secondary">beta</Badge> <br/><br/></h1>
+                <h1><b>Time Block <br />Your Life</b><br/><br/></h1>
 
                 <div class="intro">
-                    <Fade right cascade>
+                    <Fade right>
                         <img src={"/images/" + this.props.image} id="header-image"/>
                     </Fade>
 
