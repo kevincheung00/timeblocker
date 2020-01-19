@@ -32,7 +32,7 @@ class SplashPage extends React.Component {
                 </div>
 
                 <div class="credits">
-                    <p>Made by Justin Zhang, Kevin Cheung, Shuhb Shah, Sammi Yeung</p>
+                    <p>Made by Justin Zhang, Kevin Cheung, Shubh Shah, Sammi Yeung</p>
                 </div>
             </div>
         );
