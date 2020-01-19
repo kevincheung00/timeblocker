@@ -41,16 +41,14 @@ const MainApp = props => {
     },
     { class: "CS2214b", type: "Exam", due: "2020-02-04", name: "Midterm" },
     { class: "CS2212b", type: "Exam", due: "2020-02-05", name: "Midterm" },
-    { class: "CS2212b", type: "Assignment", due: "2020-02-10", name: "Assignment 4" },
-    { class: "CS2212b", type: "Assignment", due: "2020-02-27", name: "Assignment 5" },
   ]);
 
   const [ show, setShow ] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [ _course, setCourse] = useState("");
-  const [ _type, setType] = useState("");
+  const [ _course, setCourse] = useState("CS2209b");
+  const [ _type, setType] = useState("Exam");
   const [ _due, setDue] = useState("2020-01-25");
   const [ _name, setName] = useState("");
 
@@ -74,12 +72,6 @@ const MainApp = props => {
     handleClose()
 
     const x = [...newInput];
-
-    if (_course === "")
-      setCourse("CS2209b");
-    if (_type === "")
-      setType("Assignment");
-    setDue("2020-01-25");
     x.push({ class: _course, type: _type, due: _due, name: _name })
 
     setnewInput(x);
