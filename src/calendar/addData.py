@@ -1,10 +1,12 @@
 from __future__ import print_function
-import datetime
+from datetime import datetime
 import pickle
 import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import dateutil.parser
+from retrieveData import events
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
@@ -34,14 +36,28 @@ def main():
 
     service = build('calendar', 'v3', credentials=creds)
 
-    event = {
-      'summary': 'Dinner with friends',
-      'start': {'dateTime': '2020-01-20T15:00:00-05:00'},
-      'end': {'dateTime': '2020-01-20T19:00:00-05:00'}
+    hoursLeft = 10
+
+    dueDate = dateutil.parser.parse('2020-01-23T11:59:00-05:00')
+
+    dueDate = datetime.date(dueDate)
+
+    print(dueDate)
+    print(datetime.date(datetime.now()))
+    daysBeforeDue =  (dueDate - datetime.date(datetime.now())).total_seconds()/86400
+    print(daysBeforeDue)
+
+
+    freestuff = retrieveData()
+
+    currentTask = {
+      'summary': 'Work on: 2214B: Assignment 2 - Python',
+      'start': {'dateTime': ''},
+      'end': {'dateTime': ''}
     }
-    event = service.events().insert(calendarId='primary', body=event).execute()
+    # event = service.events().insert(calendarId='primary', body=event).execute()
     # print 'Event created: %s' % (event.get('htmlLink'))
-    # print 'Event created'
+    print("Event created")
 
 
 if __name__ == '__main__':
